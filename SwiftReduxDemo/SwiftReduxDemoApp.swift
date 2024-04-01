@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SwiftReduxDemoApp: App {
+    
+    let store = Store(reducer: reducer)
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(store)
         }
     }
 }
