@@ -11,6 +11,7 @@
 		B0530E562BBB108F0014ED24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0530E552BBB108F0014ED24 /* ContentView.swift */; };
 		B0530E582BBB10900014ED24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0530E572BBB10900014ED24 /* Assets.xcassets */; };
 		B0530E5B2BBB10900014ED24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0530E5A2BBB10900014ED24 /* Preview Assets.xcassets */; };
+		B0530E632BBB14410014ED24 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0530E622BBB14410014ED24 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B0530E552BBB108F0014ED24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B0530E572BBB10900014ED24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0530E5A2BBB10900014ED24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B0530E622BBB14410014ED24 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		B0530E522BBB108F0014ED24 /* SwiftReduxDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B0530E612BBB14270014ED24 /* Store */,
 				B0530E532BBB108F0014ED24 /* SwiftReduxDemoApp.swift */,
 				B0530E552BBB108F0014ED24 /* ContentView.swift */,
 				B0530E572BBB10900014ED24 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				B0530E5A2BBB10900014ED24 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B0530E612BBB14270014ED24 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				B0530E622BBB14410014ED24 /* Store.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0530E632BBB14410014ED24 /* Store.swift in Sources */,
 				B0530E562BBB108F0014ED24 /* ContentView.swift in Sources */,
 				B0530E542BBB108F0014ED24 /* SwiftReduxDemoApp.swift in Sources */,
 			);

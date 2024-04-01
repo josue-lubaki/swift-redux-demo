@@ -8,17 +8,63 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var store : Store
+    
+    struct Props {
+        let counter : Int
+        let onIncrement: () -> Void
+        let onDecrement: () -> Void
+        let onAdd: (Int) -> Void
+    }
+    
+    private func map(state : State) -> Props {
+        Props(
+            counter: state.counter,
+            onIncrement: {
+                store.dispatch(action: IncrementAction())
+            },
+            onDecrement: {
+                store.dispatch(action: DecrementAction())
+            },
+            onAdd: { value in
+                store.dispatch(action: AddAction(value: value))
+            }
+        )
+    }
+    
     var body: some View {
+        
+        let props = map(state: store.state)
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("\(props.counter)")
+                .padding()
+            
+            Button("Increment"){
+                props.onIncrement()
+            }
+            
+            Button("Decrement"){
+                props.onDecrement()
+            }
+            
+            Button("OnAdd"){
+                props.onAdd(50)
+            }
         }
-        .padding()
+    }
+}
+
+fileprivate struct ContentViewPreviews : View {
+    
+    let store = Store(reducer: reducer)
+    
+    var body : some View {
+        ContentView().environmentObject(store)
     }
 }
 
 #Preview {
-    ContentView()
+    ContentViewPreviews()
 }
