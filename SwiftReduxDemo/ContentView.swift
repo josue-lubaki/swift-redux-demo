@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @EnvironmentObject var store : Store
     
-    struct Props {
+    private struct Props {
         let counter : Int
         let onIncrement: () -> Void
         let onDecrement: () -> Void
@@ -37,28 +37,33 @@ struct ContentView: View {
         
         let props = map(state: store.state)
         
-        VStack {
-            Text("\(props.counter)")
-                .padding()
-            
-            Button("Increment"){
-                props.onIncrement()
-            }
-            
-            Button("Decrement"){
-                props.onDecrement()
-            }
-            
-            Button("OnAdd"){
-                props.onAdd(50)
+        NavigationStack {
+            VStack {
+                Text("\(props.counter)")
+                    .padding()
+                
+                Button("Increment"){
+                    props.onIncrement()
+                }
+                
+                Button("Decrement"){
+                    props.onDecrement()
+                }
+                
+                Button("OnAdd"){
+                    props.onAdd(50)
+                }
+                
+                NavigationLink("Next page"){
+                    ProfileView()
+                }
             }
         }
     }
 }
 
 fileprivate struct ContentViewPreviews : View {
-    
-    let store = Store(reducer: reducer)
+    private let store = Store(reducer: reducer)
     
     var body : some View {
         ContentView().environmentObject(store)
